@@ -5,7 +5,7 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
-set BUILDDIR=.
+set BUILDDIR=_build
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% .
 set I18NSPHINXOPTS=%SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
@@ -65,6 +65,7 @@ if "%1" == "html" (
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
+	xcopy /S /E /F /G /H /R /K /Y %BUILDDIR%\html\* .
 	goto end
 )
 
